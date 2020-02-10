@@ -34,7 +34,8 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192,
+              // limit: 8192,
+              name: '[name].[ext]',
             },
           },
         ],
@@ -85,12 +86,8 @@ module.exports = {
     }),
     // new CopyWebpackPlugin([
     //   {
-    //     from: 'assets/images/*',
+    //     from: 'components/Unknown/assets/images/*',
     //     to: 'assets/images/[name].[ext]',
-    //   },
-    //   {
-    //     from: 'assets/frames/*',
-    //     to: 'assets/frames/[name].[ext]',
     //   },
     // ]),
   ],
