@@ -37,5 +37,9 @@ export default class AnswerItem extends PureComponent {
 
 AnswerItem.propTypes = {
   index: PropTypes.number.isRequired,
+  changeActiveAnswer: PropTypes.func.isRequired,
+  trueAnswerIndex: PropTypes.number.isRequired,
+  activeQuestion: PropTypes.number.isRequired,
+  // birdData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
 };

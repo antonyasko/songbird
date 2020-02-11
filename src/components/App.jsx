@@ -1,10 +1,11 @@
-/* eslint-disable react/state-in-constructor */
-/* eslint-disable react/no-access-state-in-setstate */
 import React, { PureComponent } from 'react';
 import QuestionList from './QuestionList/questionList';
 import AnswersList from './AnswersList/answersList';
 import UnknownBird from './UnknownBird/unknownBird';
 import BirdInfo from './BirdInfo/birdInfo';
+import NextButton from './NextButton/nextButton';
+import StartAgainButton from './StartAgainButton/startAgainButton';
+
 // import birdsData from '../birdsData';
 
 class App extends PureComponent {
@@ -28,6 +29,7 @@ class App extends PureComponent {
 
     this.changeActiveQuestion = this.changeActiveQuestion.bind(this);
     this.changeActiveAnswer = this.changeActiveAnswer.bind(this);
+    this.startGameAgain = this.startGameAgain.bind(this);
   }
 
   changeActiveQuestion() {
@@ -35,6 +37,14 @@ class App extends PureComponent {
       activeAnswer: false,
       activeQuestion: prevState.activeQuestion + 1,
     }));
+  }
+
+  startGameAgain() {
+    this.setState({
+      activeAnswer: false,
+      activeQuestion: 0,
+      trueAnswerIndex: Math.floor(Math.random() * Math.floor(6)),
+    });
   }
 
   changeActiveAnswer(index) {
@@ -46,9 +56,9 @@ class App extends PureComponent {
   render() {
     const { activeQuestion, trueAnswerIndex, activeAnswer } = this.state;
 
-    return (
+    return activeQuestion <= 5 ? (
       <div className="container">
-        <header className="jumbotron header">
+        <header className="header">
           <div className="first-line">
             <h1>
               song
@@ -69,19 +79,50 @@ class App extends PureComponent {
           questions={this.questions}
           activeQuestion={activeQuestion}
           trueAnswerIndex={trueAnswerIndex}
+          activeAnswer={activeAnswer}
         />
         <div id="answers-block">
           <AnswersList
             activeQuestion={activeQuestion}
-            trueAnswerIndex={trueAnswerIndex}
             activeAnswer={activeAnswer}
             changeActiveAnswer={this.changeActiveAnswer}
+            trueAnswerIndex={trueAnswerIndex}
           />
           <BirdInfo activeAnswer={activeAnswer} activeQuestion={activeQuestion} />
         </div>
-        <button type="button" id="next-level" className="inactive-next-button">
-          Следующий уровень
-        </button>
+        <NextButton
+          activeQuestion={activeQuestion}
+          trueAnswerIndex={trueAnswerIndex}
+          activeAnswer={activeAnswer}
+          // changeActiveAnswer={this.changeActiveAnswer}
+          changeActiveQuestion={this.changeActiveQuestion}
+        />
+      </div>
+    ) : (
+      <div className="container">
+        <header className="header">
+          <div className="first-line">
+            <h1>
+              song
+              <span>bird</span>
+            </h1>
+            <p className="score">
+              Счёт:&nbsp;
+              <output name="result">0</output>
+            </p>
+          </div>
+        </header>
+        <div id="finish-block">
+          <p id="finish-title">Поздравляем!</p>
+          <p id="finish-message">
+            Вы прошли викторину и набрали&nbsp;
+            <span>{`${0}`}</span>
+            &nbsp;из&nbsp;
+            <span>30</span>
+            &nbsp;возможных баллов.
+          </p>
+          <StartAgainButton startGameAgain={this.startGameAgain} />
+        </div>
       </div>
     );
   }
