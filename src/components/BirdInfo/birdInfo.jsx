@@ -20,9 +20,8 @@ export default class BirdInfo extends PureComponent {
           <div className="bird-audio">
             <p className="bird-name">{birdData[activeQuestion][activeAnswer].name}</p>
             <p className="bird-species">{birdData[activeQuestion][activeAnswer].species}</p>
-            <audio controls>
-              <source src={birdData[activeQuestion][activeAnswer].audio} type="audio/mpeg" />
-              <track kind="" />
+            <audio controls src={birdData[activeQuestion][activeAnswer].audio}>
+              <track kind="captions" />
             </audio>
           </div>
         </div>
