@@ -22,7 +22,6 @@ export default class FinishMessage extends PureComponent {
         Вы победили!!!
         <img id="finish-image" src={img} alt="bird-winner" />
       </p>
-      // <img src={aaa} alt="unknown-bird" />
     );
   }
 }

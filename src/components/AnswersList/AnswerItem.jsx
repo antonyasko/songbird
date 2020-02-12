@@ -1,10 +1,8 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import birdsData from '../../birdsData';
 
 export default class AnswerItem extends PureComponent {
   constructor(props) {
@@ -68,9 +66,9 @@ export default class AnswerItem extends PureComponent {
 AnswerItem.propTypes = {
   index: PropTypes.number.isRequired,
   changeActiveAnswer: PropTypes.func.isRequired,
+  changeActualScore: PropTypes.func.isRequired,
+  changeIsFind: PropTypes.func.isRequired,
   trueAnswerIndex: PropTypes.number.isRequired,
-  // activeQuestion: PropTypes.number.isRequired,
-  // birdData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  trueAnswerIsFind: PropTypes.bool.isRequired,
   activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
-  // prelimScore: PropTypes.array.isRequired,
 };

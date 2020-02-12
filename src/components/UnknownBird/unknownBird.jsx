@@ -41,5 +41,4 @@ UnknownBird.propTypes = {
   trueAnswerIndex: PropTypes.number.isRequired,
   trueAnswerIsFind: PropTypes.bool.isRequired,
   activeQuestion: PropTypes.number.isRequired,
-  // activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
 };

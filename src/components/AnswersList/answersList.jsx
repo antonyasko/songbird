@@ -3,7 +3,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import birdsData from '../../birdsData';
 import AnswerItem from './AnswerItem';
-
 import './answersList.scss';
 
 export default class AnswersList extends PureComponent {
@@ -54,5 +53,4 @@ AnswersList.propTypes = {
   trueAnswerIsFind: PropTypes.bool.isRequired,
   actualScore: PropTypes.number.isRequired,
   changeActualScore: PropTypes.func.isRequired,
-  // prelimScore: PropTypes.object.isRequired,
 };

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import birdData from '../../birdsData';
 import './startAgainButton.scss';
 
 export default class StartAgainButton extends PureComponent {
@@ -17,8 +16,6 @@ export default class StartAgainButton extends PureComponent {
   };
 
   render() {
-    // const { trueAnswerIndex, activeAnswer } = this.props;
-
     return (
       <button type="button" id="start-again-button" onClick={this.startNewGame}>
         Попробовать ещё раз!
@@ -28,8 +25,5 @@ export default class StartAgainButton extends PureComponent {
 }
 
 StartAgainButton.propTypes = {
-  // activeQuestion: PropTypes.number.isRequired,
   startGameAgain: PropTypes.func.isRequired,
-  // trueAnswerIndex: PropTypes.number.isRequired,
-  // activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
 };

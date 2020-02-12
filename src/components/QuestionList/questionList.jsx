@@ -1,19 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
-// import React, { Component } from 'react';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './questionList.scss';
 
-// export default class QuestionList extends Component {
 export default class QuestionList extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     activeQuestion: 0,
-  //   };
-  // }
-
   render() {
     const { questions, activeQuestion } = this.props;
 

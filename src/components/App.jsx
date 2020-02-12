@@ -132,7 +132,6 @@ class App extends PureComponent {
           trueAnswerIndex={trueAnswerIndex}
           trueAnswerIsFind={trueAnswerIsFind}
           activeAnswer={activeAnswer}
-          // changeActiveAnswer={this.changeActiveAnswer}
           changeActiveQuestion={this.changeActiveQuestion}
         />
       </div>
