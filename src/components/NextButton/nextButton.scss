@@ -1,0 +1,40 @@
+#next-level {
+  width: 1110px;
+  height: 50px;
+  color: #ffffff;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  outline: none;
+  &.inactive-next-button {
+    background-color: #303030;
+    cursor: not-allowed;
+  }
+  &.active-next-button {
+    background-color: #005e46;
+    cursor: pointer;
+  }
+  &.active-next-button:hover {
+    background-color: #20c997;
+    color: #000000;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1199px){
+  #next-level {
+    width: 930px;
+  }
+}
+
+@media (max-width: 996px){
+  #next-level {
+    width: 690px;
+  }
+}
+
+@media (max-width: 724px) {
+  #next-level {
+    width: 298px;
+    margin-bottom: 5px;
+  }
+}

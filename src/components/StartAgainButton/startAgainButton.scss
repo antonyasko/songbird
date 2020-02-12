@@ -1,0 +1,35 @@
+#start-again-button {
+  width: 1000px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  outline: none;
+  background-color: #005e46;
+  cursor: pointer;
+  &:hover {
+    background-color: #20c997;
+    color: #000000;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1199px){
+  #start-again-button {
+    width: 770px;
+  }
+}
+
+@media (max-width: 996px){
+  #start-again-button {
+    width: 550px;
+  }
+}
+
+@media (max-width: 724px) {
+  #start-again-button {
+    width: 250px;
+    margin-bottom: 5px;
+  }
+}

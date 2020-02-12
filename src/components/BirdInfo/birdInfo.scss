@@ -1,0 +1,133 @@
+#bird-info {
+  width: 715px;
+  height: 283px;
+  background-color: #303030;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .bird-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 715px;
+    .bird-image {
+      width: 200px;
+      height: 155px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    .bird-audio {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 155px;
+      .bird-name, .bird-species {
+        width: 475px;
+        font-size: 25px;
+        border-bottom: 2px solid gray;
+        margin: 0;
+      }
+      audio {
+        width: 475px;
+      }
+      .bird-species {
+        font-size: 18px;
+        border-bottom: 2px solid gray;
+      }
+    }
+  }
+  .bird-description {
+    width: 715px;
+    height: 115px;
+    padding: 15px;
+    font-size: 14px;
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1199px){
+  #bird-info {
+    width: 533px;
+    .bird-title {
+      width: 535px;
+      .bird-audio {
+        .bird-name, .bird-species {
+          width: 315px;
+        }
+        audio {
+          width: 315px;
+        }
+      }
+    }
+    .bird-description {
+      width: 530px;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 996px){
+  #bird-info {
+    justify-content: space-between;
+    width: 445px;
+    .bird-title {
+      width: 445px;
+      .bird-image {
+        width: 200px;
+        height: 155px;
+        border-radius: 15px;
+      }
+      .bird-audio {
+        .bird-name, .bird-species {
+          width: 225px;
+          font-size: 25px;
+          border-bottom: 2px solid gray;
+        }
+        .bird-species {
+          font-size: 18px;
+          border-bottom: 2px solid gray;
+        }
+        audio {
+          width: 225px;
+        }
+      }
+    }
+    .bird-description {
+      width: 445px;
+    }
+  }
+}
+
+@media (max-width: 724px){
+  #bird-info {
+    margin-top: 5px;
+    justify-content: space-between;
+    width: 286px;
+    padding: 5px;
+    height: min-content;
+    .bird-title {
+      flex-direction: column;
+      width: 286px;
+      .bird-audio {
+        .bird-name, .bird-species {
+          width: 278px;
+        }
+        audio {
+          width: 278px;
+        }
+      }
+    }
+    .bird-description {
+      width: 280px;
+      height: min-content;
+    }
+  }
+}
+
+
