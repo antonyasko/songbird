@@ -69,7 +69,7 @@ body {
       }
       #finish-block {
         width: 1078px;
-        height: 350px;
+        height: max-content;
         padding: 15px;
         border: 1px solid #808080;
         border-radius: 5px;
@@ -78,17 +78,6 @@ body {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        #finish-title {
-          color: #ffffff;
-          font-size: 40px;
-        }
-        #finish-message {
-          span {
-            font-weight: bold;
-          }
-          color: #ffffff;
-          font-size: 18px;
-        }
       }
     }
   }
@@ -163,9 +152,6 @@ body {
         #finish-block {
           width: 286px;
           padding: 5px;
-          #finish-message {
-            text-align: center;
-          }
         }
       }
     }

@@ -5,8 +5,8 @@ import UnknownBird from './UnknownBird/unknownBird';
 import BirdInfo from './BirdInfo/birdInfo';
 import NextButton from './NextButton/nextButton';
 import StartAgainButton from './StartAgainButton/startAgainButton';
+import FinishMessage from './FinishMessage/finishMessage';
 
-// import birdsData from '../birdsData';
 const maxMark = 5;
 
 class App extends PureComponent {
@@ -151,14 +151,7 @@ class App extends PureComponent {
           </div>
         </header>
         <div id="finish-block">
-          <p id="finish-title">Поздравляем!</p>
-          <p id="finish-message">
-            Вы прошли викторину и набрали&nbsp;
-            <span>{actualScore}</span>
-            &nbsp;из&nbsp;
-            <span>30</span>
-            &nbsp;возможных баллов.
-          </p>
+          <FinishMessage actualScore={actualScore} />
           <StartAgainButton startGameAgain={this.startGameAgain} />
         </div>
       </div>

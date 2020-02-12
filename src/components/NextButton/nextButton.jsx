@@ -25,11 +25,11 @@ export default class NextButton extends PureComponent {
         className="active-next-button"
         onClick={this.changeLevel}
       >
-        Следующий уровень
+        Дальше
       </button>
     ) : (
       <button type="button" id="next-level" className="inactive-next-button">
-        Следующий уровень
+        Дальше
       </button>
     );
   }
