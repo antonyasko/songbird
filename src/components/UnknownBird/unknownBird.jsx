@@ -6,9 +6,9 @@ import './unknownBird.scss';
 
 export default class UnknownBird extends PureComponent {
   render() {
-    const { trueAnswerIndex, activeQuestion, activeAnswer } = this.props;
+    const { trueAnswerIndex, activeQuestion, trueAnswerIsFind } = this.props;
 
-    return activeAnswer !== trueAnswerIndex ? (
+    return trueAnswerIsFind === false ? (
       <div id="unknown-bird">
         <img id="unknown-bird-image" src={img} alt="unknown-bird" />
         <div id="unknown-bird-audio">
@@ -39,6 +39,7 @@ export default class UnknownBird extends PureComponent {
 
 UnknownBird.propTypes = {
   trueAnswerIndex: PropTypes.number.isRequired,
+  trueAnswerIsFind: PropTypes.bool.isRequired,
   activeQuestion: PropTypes.number.isRequired,
-  activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
+  // activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
 };

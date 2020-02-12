@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import birdData from '../../birdsData';
 import './nextButton.scss';
 
 export default class NextButton extends PureComponent {
@@ -17,9 +16,9 @@ export default class NextButton extends PureComponent {
   };
 
   render() {
-    const { trueAnswerIndex, activeAnswer } = this.props;
+    const { trueAnswerIsFind } = this.props;
 
-    return activeAnswer === trueAnswerIndex ? (
+    return trueAnswerIsFind ? (
       <button
         type="button"
         id="next-level"
@@ -37,8 +36,6 @@ export default class NextButton extends PureComponent {
 }
 
 NextButton.propTypes = {
-  // activeQuestion: PropTypes.number.isRequired,
   changeActiveQuestion: PropTypes.func.isRequired,
-  trueAnswerIndex: PropTypes.number.isRequired,
-  activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
+  trueAnswerIsFind: PropTypes.bool.isRequired,
 };

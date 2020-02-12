@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -13,9 +14,26 @@ export default class AnswerItem extends PureComponent {
   }
 
   showBirdDescription = () => {
-    const { index, changeActiveAnswer } = this.props;
+    const {
+      index,
+      trueAnswerIndex,
+      trueAnswerIsFind,
+      changeActiveAnswer,
+      changeIsFind,
+      // actualScore,
+      prelimScore,
+      changeActualScore,
+    } = this.props;
 
     changeActiveAnswer(index);
+
+    if (index === trueAnswerIndex && !trueAnswerIsFind) {
+      changeIsFind();
+      changeActualScore(prelimScore);
+    }
+    if (index !== trueAnswerIndex && !prelimScore.includes(index) && !trueAnswerIsFind) {
+      prelimScore.push(index);
+    }
   };
 
   render() {
@@ -42,4 +60,5 @@ AnswerItem.propTypes = {
   activeQuestion: PropTypes.number.isRequired,
   // birdData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
+  // prelimScore: PropTypes.array.isRequired,
 };
