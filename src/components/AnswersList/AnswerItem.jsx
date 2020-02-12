@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import birdsData from '../../birdsData';
+// import birdsData from '../../birdsData';
 
 export default class AnswerItem extends PureComponent {
   constructor(props) {
@@ -20,7 +20,6 @@ export default class AnswerItem extends PureComponent {
       trueAnswerIsFind,
       changeActiveAnswer,
       changeIsFind,
-      // actualScore,
       prelimScore,
       changeActualScore,
     } = this.props;
@@ -37,12 +36,25 @@ export default class AnswerItem extends PureComponent {
   };
 
   render() {
-    const { index, birdData, trueAnswerIndex, activeAnswer, activeQuestion } = this.props;
-    const trueAnswerId = birdsData[activeQuestion][trueAnswerIndex].id;
-    const activeAnswerExist = activeAnswer !== false;
-    const classNameForActiveAnswerItem = birdData.id === trueAnswerId ? 'success' : 'fail';
-    const classNameForAnswerItem =
-      activeAnswerExist && activeAnswer === index ? classNameForActiveAnswerItem : '';
+    const {
+      index,
+      birdData,
+      trueAnswerIndex,
+      trueAnswerIsFind,
+      activeAnswer,
+      prelimScore,
+    } = this.props;
+
+    let classNameForAnswerItem;
+    if (!trueAnswerIsFind && !activeAnswer) {
+      classNameForAnswerItem = '';
+    }
+    if (trueAnswerIsFind && trueAnswerIndex === index) {
+      classNameForAnswerItem = 'success';
+    }
+    if (prelimScore.includes(index)) {
+      classNameForAnswerItem = 'fail';
+    }
 
     return (
       <li key={birdData.id} className="answer" onClick={this.showBirdDescription}>
@@ -57,7 +69,7 @@ AnswerItem.propTypes = {
   index: PropTypes.number.isRequired,
   changeActiveAnswer: PropTypes.func.isRequired,
   trueAnswerIndex: PropTypes.number.isRequired,
-  activeQuestion: PropTypes.number.isRequired,
+  // activeQuestion: PropTypes.number.isRequired,
   // birdData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   activeAnswer: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]).isRequired,
   // prelimScore: PropTypes.array.isRequired,
